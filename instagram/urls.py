@@ -20,5 +20,6 @@ from gram import views as vw
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'register/',vw.register,name='register'),
+    url(r'login/',vw.login_view,name='login'),
     url(r'',include('gram.urls')),
 ]
