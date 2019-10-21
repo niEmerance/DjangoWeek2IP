@@ -17,6 +17,14 @@ class NewPostForm(forms.ModelForm):
         model = Post
         exclude = ['pub_date']
 
+# class ProfileForm(forms.ModelForm):
+#    def __init__(self, *args, **kwargs):
+#        super().__init__(*args, **kwargs)
+#        self.fields['fullname'].widget=forms.TextInput()
+#    class Meta:
+#        model=Profile
+#        exclude=['username']
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model=Comment

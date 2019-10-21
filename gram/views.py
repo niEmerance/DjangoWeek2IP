@@ -4,7 +4,7 @@ from .forms import RegisterForm,NewPostForm,CommentForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from .models import Post,Comment
+from .models import Post,Comment,Profile
 from django.core.exceptions import ObjectDoesNotExist
 
 @login_required(login_url='login/')
@@ -51,5 +51,10 @@ def new_post(request):
     else:
         form = NewPostForm()
     return render(request, 'all-grams/new_post.html', {"form": form})
+
+@login_required(login_url='login/')
+def profile(request):
+    profiles= Profile.objects.all()
+    return render(request,'all-grams/profile.html',{"profiles":profiles})
 
             

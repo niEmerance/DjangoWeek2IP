@@ -3,6 +3,15 @@ from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 
 # Create your models here.
+class Profile(models.Model):
+    user=models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_pic = models.ImageField(default='default.jpg',upload_to='photos/')
+    bio = HTMLField(null=True)
+
+    def __str__(self):
+        return self.user.username
+
+
 class Post(models.Model):
     post_image = models.ImageField(upload_to = 'photos/')
     post_caption = models.CharField(max_length=300)
@@ -38,6 +47,5 @@ class Comment(models.Model):
 
     def save_comment(self):
         self.save()
-    
 
 

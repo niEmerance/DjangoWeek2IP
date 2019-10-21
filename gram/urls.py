@@ -7,6 +7,7 @@ app_name='gram'
 
 urlpatterns=[
     url('^$',views.welcome,name = 'welcome'),
+    url(r'profile/',views.profile,name='profile'),
     url(r'register/',views.register,name = 'register'),
     url(r'login/',views.login_view,name='login'),
     url(r'^new/post/', views.new_post, name = 'new-post'),
