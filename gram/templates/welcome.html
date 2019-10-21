@@ -1,6 +1,21 @@
 {%extends 'all-grams/base.html'%}
 
-{% block content %}
-{{block.super}}
-<h1>Welcome to my Instagram</h1>
+ {% block content %}
+
+<div class="container">
+    
+    {% for post in posts %}
+    
+   <div class="row">
+     <img src="{{post.post_image.url}}"  class="img-responsive" alt="">
+   </div>
+   <div class="row">
+    <p>{{post.post_caption}}</p>
+   </div>
+   <div class="row">
+     <p>Posted by {{post.upload_by}}</p>
+   </div>
+   {% endfor %}
+</div>
+
 {% endblock %}

@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'register/',vw.register,name='register'),
     url(r'login/',vw.login_view,name='login'),
     url(r'',include('gram.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
 ]
