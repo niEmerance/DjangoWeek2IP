@@ -1,22 +1,28 @@
 {%extends 'all-grams/base.html'%}
 
- {% block content %}
+{% block content %}
 
 <div class="container">
-    
-    {% for post in posts %}
-    
-   <div class="row">
-     <img src="{{post.post_image.url}}"  class="img-responsive" alt="">
-   </div>
-   <div class="row">
-    <p>{{post.post_caption}}</p>
-   </div>
-   <div class="row">
-     <p>Posted by {{post.upload_by}}</p>
-   </div>
-   <p><a href="#">Leave Comment</a></p>
-   {% endfor %}
+
+  {% for post in posts %}
+  <div class="postings">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-5">
+        <h4><img src="https://cdn1.iconfinder.com/data/icons/instagram-ui-flat/48/Instagram_UI-18-512.png" height=60px
+            weight=60px>{{post.upload_by}}</h4>
+
+        <img src="{{post.post_image.url}}" class="img-responsive" alt="" height=400px width=550px>
+
+        <p>{{post.post_caption}}</p>
+        <p><a href="#">Leave Comment</a></p>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+
+
+  </div>
+  {% endfor %}
 </div>
 
 {% endblock %}

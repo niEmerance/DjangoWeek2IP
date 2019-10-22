@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'register/',vw.register,name='register'),
     url(r'login/',vw.login_view,name='login'),
+    # url(r'logout/',vw.logout,name='logout'),
     url(r'',include('gram.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
 ]

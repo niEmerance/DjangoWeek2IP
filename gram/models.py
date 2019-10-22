@@ -5,7 +5,7 @@ from tinymce.models import HTMLField
 # Create your models here.
 class Profile(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_pic = models.ImageField(default='default.jpg',upload_to='photos/')
+    profile_pic = models.ImageField(default='default.jpg',upload_to='profiles/')
     bio = HTMLField(null=True)
 
     def __str__(self):

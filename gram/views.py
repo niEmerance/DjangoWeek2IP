@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 from .forms import RegisterForm,NewPostForm,CommentForm
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
+from django.contrib.auth import login,logout
 from django.contrib.auth.decorators import login_required
 from .models import Post,Comment,Profile
 from django.core.exceptions import ObjectDoesNotExist
@@ -36,6 +36,11 @@ def login_view(request):
     else:
         form=AuthenticationForm()
     return render(request, 'all-grams/registration/login.html',{"form":form})
+
+def logout_view(request):
+    if request.method=="POST":
+        logout(request)
+    return redirect('gram:login')
 
 @login_required(login_url='login/')
 def new_post(request):

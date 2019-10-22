@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
 
@@ -5,23 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse" style="background-color: rgba(211,211,211,0.8)">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="{% url 'gram:welcome' %}">Home</a>
+        <a class="navbar-brand" href="{% url 'gram:welcome' %}"><img src="https://cdn.neow.in/news/images/uploaded/2017/09/1506362527_instagram_logo_story.jpg" height=100px
+          weight=180px></a>
       </div>
-      <li>
-        <a href="{%url 'gram:new-post' %}">Create Post</a>
-      </li>
-      <li>
-        <a href="{%url 'register' %}">Sign Up</a>
-      </li>
-    
-    
-    
-      <li>
-        <a class='btn btn-default' href="{% url 'gram:login' %}">Login</a>
-      </li>
+  
+        <a href="{%url 'gram:new-post' %}" style="font-family: serif; color: tomato">Add Post</a>
+        <a href="{%url 'gram:profile' %}" style="font-family: serif; color: tomato">Profile</a>
+      <form  action="{% url 'gram:logout' %}" method="post">
+        {%csrf_token%}
+        <button type="submit" class="btn btn-secondary">Logout</button>
+    </form>
     </div>
     </div>
   </nav>

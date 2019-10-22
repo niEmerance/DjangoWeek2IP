@@ -6,7 +6,7 @@
 
 <div class="container">
 
-  <div class="text-center w-50 rounded border border-primary bg-white mx-auto">
+  <div class="text-center w-50 rounded border border-primary bg-white mx-auto" style="margin-top: 50px">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" alt="" width="200">
     <br>
     <p class="border border-secondary bg-secondary text-white">Post A Photo</p>
@@ -14,7 +14,7 @@
         {%csrf_token%}
 
         {% bootstrap_form form%}
-        <input type="submit" class="btn btn-success btn-lg" value="Post">
+        <input type="submit" class="btn btn-secondary" value="Post">
     </form>
   </div>
 
