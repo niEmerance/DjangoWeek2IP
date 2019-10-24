@@ -27,7 +27,4 @@ You also have the possibility to edit your profile and view the photos that you 
 1. Postgres
 1. Heroku for deployment
 
-### Licence
-This project is under the [MIT](https://github.com) licence
-
 Copyright (c) 2019 Emerance
