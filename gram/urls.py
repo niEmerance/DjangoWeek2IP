@@ -13,6 +13,8 @@ urlpatterns=[
     url(r'logout/',views.logout_view,name='logout'),
     url(r'^new/post/', views.new_post, name = 'new-post'),
     url(r'edit-profile/', views.edit_profile, name = 'edit-profile'),
+    url(r'like/', views.like_post, name = 'like_post'),
+    url(r'unlike/', views.unlike_post, name = 'unlike_post'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

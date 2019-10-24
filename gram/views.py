@@ -1,5 +1,5 @@
-from django.shortcuts import render,redirect
-from django.http  import HttpResponse,Http404
+from django.shortcuts import render,redirect,get_object_or_404
+from django.http  import HttpResponse,Http404,HttpResponseRedirect
 from .forms import RegisterForm,NewPostForm,CommentForm,UserUpdateForm,ProfileForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,logout
@@ -56,6 +56,16 @@ def new_post(request):
     else:
         form = NewPostForm()
     return render(request, 'all-grams/new_post.html', {"form": form})
+
+def like_post(request):
+    post=get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return redirect('gram:welcome')
+
+def unlike_post(request):
+    post=get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.unlikes.add(request.user)
+    return redirect('gram:welcome')
 
 @login_required(login_url='login/')
 def profile(request):

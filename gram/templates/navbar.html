@@ -13,11 +13,11 @@
           weight=180px></a>
       </div>
   
-        <a href="{%url 'gram:new-post' %}" style="font-family: serif; color: tomato">Add Post</a>
-        <a href="{%url 'gram:profile' %}" style="font-family: serif; color: tomato">Profile</a>
+        <a href="{%url 'gram:new-post' %}" style="font-family: serif; color:rgb(0,0,54);font-weight: bold">Add Post</a>
+        <a href="{%url 'gram:profile' %}" style="font-family: serif; color: rgb(0,0,54);font-weight: bold"><img src="https://image.flaticon.com/icons/png/128/149/149071.png" height="40px" weight="40px"> Profile</a>
       <form  action="{% url 'gram:logout' %}" method="post">
         {%csrf_token%}
-        <button type="submit" class="btn btn-secondary">Logout</button>
+        <a href="{%url 'gram:login' %}" style="font-family: serif; color:rgb(0,0,54);font-weight: bold"><img src="https://cdn4.iconfinder.com/data/icons/basic-ui-elements/700/012_power-512.png" height="30px" weight="30px">Logout</a>
     </form>
     </div>
     </div>

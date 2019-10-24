@@ -15,7 +15,7 @@ class RegisterForm(UserCreationForm):
 class NewPostForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ['pub_date']
+        exclude = ['pub_date','likes']
 
 # class ProfileForm(forms.ModelForm):
 #    def __init__(self, *args, **kwargs):
@@ -47,4 +47,4 @@ class ProfileForm(forms.ModelForm):
        self.fields['bio'].widget=forms.TextInput()
    class Meta:
        model=Profile
-       exclude=['username']
+       exclude=['username','likes']
