@@ -20,7 +20,11 @@
       <div class="col-md-3"></div>
     </div>
 
-
+    {% if user == current_user %}
+    <a href="{% url 'edit-profile' %}">
+      <button class="btn btn-warning"type="button" name="button"><img src="https://img.icons8.com/color/48/000000/pencil.png" width="24">Edit Profile</button>
+    </a>
+    {% endif %}
   </div>
   {% endfor %}
 </div>

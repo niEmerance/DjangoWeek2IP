@@ -12,6 +12,7 @@ urlpatterns=[
     url(r'login/',views.login_view,name='login'),
     url(r'logout/',views.logout_view,name='logout'),
     url(r'^new/post/', views.new_post, name = 'new-post'),
+    url(r'edit-profile/', views.edit_profile, name = 'edit-profile'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -1,15 +1,15 @@
 {%extends 'all-grams/base.html'%}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
 
- {% block content %}
-    <div class="content-section">
-        {% for profile in profiles %}
-        <div class="media">
-            <img class="rounded-circle account-img" src="{{ profile.profile_pic.url }}" height="200px" width="220px">
-            <div class="media-body">
-                <h2 class="account-heading">{{ user.username}}</h2>
-                <p class="text-secondary">{{profile.bio}}</p>
-            </div>
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.profile_pic.url }}" height="200px" width="220px">
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.username}}</h2>
+            <p class="text-secondary">{{user.profile.bio}}</p>
         </div>
-        {% endfor %}
+
     </div>
- {% endblock %}
+</div>
+{% endblock %}

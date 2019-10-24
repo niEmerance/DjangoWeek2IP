@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
-from .forms import RegisterForm,NewPostForm,CommentForm
+from .forms import RegisterForm,NewPostForm,CommentForm,UserUpdateForm,ProfileForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login,logout
 from django.contrib.auth.decorators import login_required
@@ -62,4 +62,16 @@ def profile(request):
     profiles= Profile.objects.all()
     return render(request,'all-grams/profile.html',{"profiles":profiles})
 
-            
+@login_required(login_url='login/')
+def edit_profile(request):
+    current_user=request.user
+    user_edit = Profile.objects.all()
+    if request.method =='POST':
+        form=ProfileForm(request.POST,request.FILES,instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            print('success')
+    else:
+        form=ProfileForm(instance=request.user.profile)
+        print('error')
+    return render(request,'all-grams/edit_profile.html',locals())
